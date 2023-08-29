@@ -1,0 +1,43 @@
+<div class="signupbox"> <img src="https://i.imgur.com/ZYzTdD0.png" class="avatar">
+    <h1>Signup Here</h1>
+    <form [formGroup]="signupForm">
+
+        <select formControlName="revenueGoal" (change)="addProduct($event)">
+            <option value = "">Select</option>
+            <ng-container *ngFor = "let tr of revenue" aria-placeholder="select">
+              
+                <option value = {{tr.Code}}>{{tr.Name}} </option>
+            </ng-container>
+            
+        </select>
+        
+
+
+        <!-- <div class="container" style="margin-top: 20px;">
+            <div *ngIf="showDiv('REC')" style="border:1px solid gray; margin-top: 10px;" > A <button (click)="hideDiv('REC')">Close</button></div>
+        <div  *ngIf="showDiv('ADV')" style="border:1px solid green; margin-top: 10px;" >B  <button  (click)="hideDiv('ADV')">Close</button></div>
+        </div> -->
+        <input formControlName="firstname" type="number" name="" placeholder="Enter Firstname">
+        <small *ngIf="signupForm.controls['firstname'].dirty && signupForm.hasError('required','firstname')" class="text-danger">*Firstname is required</small>
+        <!-- <p>Firstname</p> 
+        <input formControlName="firstname" type="text" name="" placeholder="Enter Firstname">
+        <small *ngIf="signupForm.controls['firstname'].dirty && signupForm.hasError('required','firstname')" class="text-danger">*Firstname is required</small>
+        <p>Lastname</p> 
+        <input formControlName="lastname" type="text" name="" placeholder="Enter Lastname">
+        <small *ngIf="signupForm.controls['lastname'].dirty && signupForm.hasError('required','lastname')" class="text-danger">*lastname is required</small>
+        <p>Username</p> 
+        <input formControlName="username" type="text" name="" placeholder="Enter Username" >
+        <small *ngIf="signupForm.controls['username'].dirty && signupForm.hasError('required','username')" class="text-danger">*Username is required</small>
+        <p>Email</p> 
+        <input formControlName="email" type="email" name="" placeholder="Enter Email" >
+        <small *ngIf="signupForm.controls['email'].dirty && signupForm.hasError('required','email')" class="text-danger">*email is required</small>
+        <p>Create Password</p> 
+        <input formControlName="password" type="password" name="" placeholder="Enter Password" > 
+        <small *ngIf="signupForm.controls['password'].dirty && signupForm.hasError('required','password')" class="text-danger">*password is required</small>
+        <button (click)="onSubmit()" type="submit" class="btn btn-primary btn-block mt-4 w-100">Signup</button>
+        <a href="#">Have an Account?</a><br> 
+        <a routerLink="/login">Login</a> -->
+
+        
+    </form>
+</div>

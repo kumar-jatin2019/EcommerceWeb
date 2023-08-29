@@ -1,0 +1,33 @@
+<app-header></app-header>
+<h1 style="color: rgb(8, 8, 8); text-align: center; ">Products</h1>
+<div class="container">
+  <div class="row">
+      <ng-container *ngFor="let item of allproducts">
+          <div class="card col-md-3">
+              <img src="{{item.thumbnail}}" alt="image">
+              <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
+              <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+              <p><strong>Price:</strong> ${{item.price}}</p>
+              <button class="btn btn-primary"  (click)=addtocart(item)>Add to cart</button>
+           
+          </div>
+      </ng-container>
+
+  </div>
+</div>
+<!-- <div class="container  mx-auto mt-4">
+  <div class="row py-5">
+<div class="col-md-3" *ngFor="let user of allproducts">
+  <div class="card" style="width: 18rem;">
+    <img src="" class="card-img-top" alt="image"/>
+    <div class="card-body">
+      <h5 class="card-title">{{user.title}}</h5>
+      <p class="card-text">{{user.description}}</p>
+     <button class="btn btn-success btn-sm" routerLink="/addtocart">Add to cart</button>
+    </div>
+  </div>
+</div>
+  </div>
+</div> -->
+
+<app-footer></app-footer>

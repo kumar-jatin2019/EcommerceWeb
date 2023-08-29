@@ -1,0 +1,19 @@
+<app-header></app-header>
+<h1 style="color: rgb(8, 8, 8); text-align: center; ">Products</h1>
+<div class="container">
+  <div class="row" >
+      <ng-container *ngIf="allproducts.length>0  else loading">
+          <div class="card col-md-3" *ngFor="let item of allproducts | filter:search">
+              <img src="{{item.thumbnail}}" alt="image">
+              <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
+              <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+              <p><strong>Price:</strong> ${{item.price}}</p>
+              <button class="btn btn-primary" routerLink="/addtocart" (click)=addtocart(item)>Add to cart</button>   
+          </div>
+      </ng-container>
+  </div>
+  <ng-template #loading>
+    No Records Found
+  </ng-template>
+</div>
+<app-footer></app-footer>

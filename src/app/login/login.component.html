@@ -1,0 +1,14 @@
+<div class="loginbox"> <img src="https://i.imgur.com/ZYzTdD0.png" class="avatar">
+    <h1>Login Here</h1>
+    <form [formGroup]="loginForm">
+        <p>Username</p> 
+        <input formControlName="username" type="text" name="" placeholder="Enter Username" >
+        <small *ngIf="loginForm.controls['username'].dirty && loginForm.hasError('required','username')" class="text-danger">*Username is required</small>
+        <p>Password</p> 
+        <input formControlName="password" type="password" name="" placeholder="Enter Password" > 
+        <small *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')" class="text-danger">*Username is required</small>
+        <button (click)="onSubmit()" type="submit" class="btn btn-primary btn-block mt-4 w-100">Login</button>
+         <a href="#">Lost your password?</a><br> <a href="#">Don't have an account?</a><br>
+         <a routerLink="/signup">Signup</a>
+    </form>
+</div>

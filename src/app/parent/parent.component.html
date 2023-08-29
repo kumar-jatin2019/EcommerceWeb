@@ -1,0 +1,24 @@
+<p>parent works!</p>
+<input type="text" placeholder="name" #val>
+<button (click) ="getValue(val)">Submit </button>
+<!-- <app-child [data] = "value">
+  
+</app-child> -->
+<app-child >
+  
+</app-child>
+
+<!-- We can use both  ngIf anf  ngFor for both -->
+<!-- <ng-container *ngIf = "show">
+</ng-container>
+
+<ng-template [ngIf] = "show">
+
+</ng-template>
+
+<button class="btn btn-warning" (click)="loadCourses()">LoadCourses</button>
+<ul>
+    <li *ngFor="let course of courses; trackBy:trackCourse">
+        {{course.name}}
+    </li>
+</ul> -->
